@@ -19,6 +19,7 @@ if !exists('g:bundle_group')
 	let g:bundle_group += ['leaderf']
 endif
 
+let g:bundle_group += ['pzhSelPlug']
 
 "----------------------------------------------------------------------
 " 计算当前 vim-init 的子路径
@@ -32,9 +33,9 @@ endfunc
 
 
 "----------------------------------------------------------------------
-" 在 ~/.vim/bundles 下安装插件
+" 在 $VIM/.vim/bundles 下安装插件
 "----------------------------------------------------------------------
-call plug#begin(get(g:, 'bundle_home', '~/.vim/bundles'))
+call plug#begin(get(g:, 'bundle_home', '$VIM/.vim/bundles'))
 
 
 "----------------------------------------------------------------------
@@ -173,6 +174,27 @@ if index(g:bundle_group, 'enhanced') >= 0
 	" ALT_+/- 用于按分隔符扩大缩小 v 选区
 	map <m-=> <Plug>(expand_region_expand)
 	map <m--> <Plug>(expand_region_shrink)
+endif
+
+"----------------------------------------------------------------------
+"PZH选择的插件mySelPlug 
+"----------------------------------------------------------------------
+if index(g:bundle_group, 'pzhSelPlug') >= 0
+
+	Plug 'skywind3000/vim-auto-popmenu'
+	"Plug 'skywind3000/vim-dict'
+
+	" enable this plugin for filetypes, '*' for all files.
+	let g:apc_enable_ft = {'d':1, 'c':1, 'cpp':1, 'h':1, 'text':1, 'markdown':1, 'php':1}
+
+	" source for dictionary, current or other loaded buffers, see ':help cpt'
+	set cpt=.,k,w,b
+
+	" don't select the first item.
+	set completeopt=menu,menuone,noselect
+
+	" suppress annoy messages.
+	set shortmess+=c
 endif
 
 
