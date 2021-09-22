@@ -8,7 +8,7 @@
 "======================================================================
 " vim: set ts=4 sw=4 tw=78 noet :
 
-
+let g:bundle_group = ['nerdtree']
 
 "----------------------------------------------------------------------
 " 默认情况下的分组，可以再前面覆盖之
@@ -43,16 +43,16 @@ call plug#begin(get(g:, 'bundle_home', s:home.'/.vim/bundles'))
 "----------------------------------------------------------------------
 
 " 全文快速移动，<leader><leader>f{char} 即可触发
-Plug 'easymotion/vim-easymotion'
+"Plug 'easymotion/vim-easymotion'
 
 " 文件浏览器，代替 netrw
 Plug 'justinmk/vim-dirvish'
 
 " 表格对齐，使用命令 Tabularize
-Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
+"Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 
 " Diff 增强，支持 histogram / patience 等更科学的 diff 算法
-Plug 'chrisbra/vim-diff-enhanced'
+"Plug 'chrisbra/vim-diff-enhanced'
 
 
 "----------------------------------------------------------------------
@@ -182,11 +182,25 @@ endif
 if index(g:bundle_group, 'pzhSelPlug') >= 0
 	Plug 'hua952/vim-auto-popmenu'
 	Plug 'jremmen/vim-ripgrep'
+	Plug 'vim-scripts/a.vim'
 	"Plug 'skywind3000/vim-auto-popmenu'
-	"Plug 'skywind3000/vim-dict'
+	Plug 'skywind3000/vim-dict'
+	Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+	let g:LanguageClient_serverCommands = {
+	\ 'd': ['serve-d'],
+	\ 'c': ['clangd'],
+	\ 'cpp': ['clangd'],
+	\ }
+	nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+	nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+	nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+	set completefunc=LanguageClient#complete
 
 	" enable this plugin for filetypes, '*' for all files.
-	let g:apc_enable_ft = {'d':1, 'c':1, 'cpp':1, 'h':1, 'text':1, 'xml':1, 'vim':1,'rs':1, 'pyh':1, 'lua':1, 'markdown':1, 'php':1}
+	let g:apc_enable_ft = {'d':1, 'text':1, 'xml':1, 'vim':1,'rs':1, 'pyh':1, 'lua':1, 'markdown':1, 'php':1}
 
 	" source for dictionary, current or other loaded buffers, see ':help cpt'
 	set cpt=.,k,w,b
@@ -334,10 +348,14 @@ if index(g:bundle_group, 'nerdtree') >= 0
 	let g:NERDTreeMinimalUI = 1
 	let g:NERDTreeDirArrows = 1
 	let g:NERDTreeHijackNetrw = 0
-	noremap <space>nn :NERDTree<cr>
-	noremap <space>no :NERDTreeFocus<cr>
-	noremap <space>nm :NERDTreeMirror<cr>
-	noremap <space>nt :NERDTreeToggle<cr>
+	"noremap <space>nn :NERDTree<cr>
+	"noremap <space>no :NERDTreeFocus<cr>
+	"noremap <space>nm :NERDTreeMirror<cr>
+	"noremap <space>nt :NERDTreeToggle<cr>
+	noremap <leader>nn :NERDTree<cr>
+	noremap <leader>no :NERDTreeFocus<cr>
+	noremap <leader>nm :NERDTreeMirror<cr>
+	noremap <leader>nt :NERDTreeToggle<cr>
 endif
 
 
