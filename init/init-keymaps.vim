@@ -19,10 +19,10 @@
 "----------------------------------------------------------------------
 " INSERT 模式下使用 EMACS 键位
 "----------------------------------------------------------------------
-inoremap <c-a> <home>
-inoremap <c-e> <end>
-inoremap <c-d> <del>
-inoremap <c-_> <c-k>
+"inoremap <c-a> <home>
+"inoremap <c-e> <end>
+"inoremap <c-d> <del>
+"inoremap <c-_> <c-k>
 
 
 "----------------------------------------------------------------------
@@ -30,29 +30,29 @@ inoremap <c-_> <c-k>
 " 使用 SecureCRT/XShell 等终端软件需设置：Backspace sends delete
 " 详见：http://www.skywind.me/blog/archives/2021
 "----------------------------------------------------------------------
-noremap <C-h> <left>
-noremap <C-j> <down>
-noremap <C-k> <up>
-noremap <C-l> <right>
-inoremap <C-h> <left>
-inoremap <C-j> <down>
-inoremap <C-k> <up>
-inoremap <C-l> <right>
+"noremap <C-h> <left>
+"noremap <C-j> <down>
+"noremap <C-k> <up>
+"noremap <C-l> <right>
+"inoremap <C-h> <left>
+"inoremap <C-j> <down>
+"inoremap <C-k> <up>
+"inoremap <C-l> <right>
 
 
 "----------------------------------------------------------------------
 " 命令模式的快速移动
 "----------------------------------------------------------------------
-cnoremap <c-h> <left>
-cnoremap <c-j> <down>
-cnoremap <c-k> <up>
-cnoremap <c-l> <right>
-cnoremap <c-a> <home>
-cnoremap <c-e> <end>
-cnoremap <c-f> <c-d>
-cnoremap <c-b> <left>
-cnoremap <c-d> <del>
-cnoremap <c-_> <c-k>
+"cnoremap <c-h> <left>
+"cnoremap <c-j> <down>
+"cnoremap <c-k> <up>
+"cnoremap <c-l> <right>
+"cnoremap <c-a> <home>
+"cnoremap <c-e> <end>
+"cnoremap <c-f> <c-d>
+"cnoremap <c-b> <left>
+"cnoremap <c-d> <del>
+"cnoremap <c-_> <c-k>
 
 
 "----------------------------------------------------------------------
@@ -168,24 +168,24 @@ noremap <silent><m-right> :call Tab_MoveRight()<cr>
 "----------------------------------------------------------------------
 
 " ALT+h/l 快速左右按单词移动（正常模式+插入模式）
-noremap <m-h> b
-noremap <m-l> w
-inoremap <m-h> <c-left>
-inoremap <m-l> <c-right>
+"noremap <m-h> b
+"noremap <m-l> w
+"inoremap <m-h> <c-left>
+"inoremap <m-l> <c-right>
 
 " ALT+j/k 逻辑跳转下一行/上一行（按 wrap 逻辑换行进行跳转） 
-noremap <m-j> gj
-noremap <m-k> gk
-inoremap <m-j> <c-\><c-o>gj
-inoremap <m-k> <c-\><c-o>gk
+"noremap <m-j> gj
+"noremap <m-k> gk
+"inoremap <m-j> <c-\><c-o>gj
+"inoremap <m-k> <c-\><c-o>gk
 
 " 命令模式下的相同快捷
-cnoremap <m-h> <c-left>
-cnoremap <m-l> <c-right>
+"cnoremap <m-h> <c-left>
+"cnoremap <m-l> <c-right>
 
 " ALT+y 删除到行末
-noremap <m-y> d$
-inoremap <m-y> <c-\><c-o>d$
+"noremap <m-y> d$
+"inoremap <m-y> <c-\><c-o>d$
 
 
 "----------------------------------------------------------------------
@@ -229,7 +229,7 @@ endif
 "----------------------------------------------------------------------
 
 " 自动打开 quickfix window ，高度为 6
-let g:asyncrun_open = 6
+let g:asyncrun_open = 9
 
 " 任务结束时候响铃提醒
 let g:asyncrun_bell = 1
@@ -331,3 +331,9 @@ else
 endif
 
 
+noremap <silent> <leader>c :cclose<cr>
+noremap <silent> <leader>n :cn<cr>
+noremap <silent> <leader>N :cp<cr>
+noremap <silent> <leader>mr :MyRoot<cr>
+noremap <silent> <leader>sr :SetMyRoot<cr>
+noremap <silent> <leader>mb :Mgb<cr>
