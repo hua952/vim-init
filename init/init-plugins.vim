@@ -8,14 +8,16 @@
 "======================================================================
 " vim: set ts=4 sw=4 tw=78 noet :
 
-let g:bundle_group = ['nerdtree']
+"let g:bundle_group = ['nerdtree']
 
 "----------------------------------------------------------------------
 " 默认情况下的分组，可以再前面覆盖之
 "----------------------------------------------------------------------
 if !exists('g:bundle_group')
-	let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
-	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc']
+	"let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
+	let g:bundle_group = ['basic']
+	"let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc']
+	let g:bundle_group += ['tags', 'nerdtree']
 	let g:bundle_group += ['leaderf']
 endif
 
@@ -105,7 +107,7 @@ if index(g:bundle_group, 'basic') >= 0
 	Plug 'kshenoy/vim-signature'
 
 	" 用于在侧边符号栏显示 git/svn 的 diff
-	Plug 'mhinz/vim-signify'
+	"Plug 'mhinz/vim-signify'
 
 	" 根据 quickfix 中匹配到的错误信息，高亮对应文件的错误行
 	" 使用 :RemoveErrorMarkers 命令或者 <space>ha 清除错误
@@ -118,7 +120,7 @@ if index(g:bundle_group, 'basic') >= 0
 	Plug 'skywind3000/vim-preview'
 
 	" Git 支持
-	Plug 'tpope/vim-fugitive'
+	"Plug 'tpope/vim-fugitive'
 
 	" 使用 ALT+E 来选择窗口
 	nmap <m-e> <Plug>(choosewin)
@@ -157,7 +159,7 @@ if index(g:bundle_group, 'enhanced') >= 0
 	Plug 'junegunn/fzf'
 
 	" 给不同语言提供字典补全，插入模式下 c-x c-k 触发
-	Plug 'asins/vim-dict'
+	"Plug 'asins/vim-dict'
 
 	" 使用 :FlyGrep 命令进行实时 grep
 	Plug 'wsdjeg/FlyGrep.vim'
@@ -181,10 +183,11 @@ endif
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'pzhSelPlug') >= 0
 	Plug 'hua952/vim-auto-popmenu'
-	Plug 'jremmen/vim-ripgrep'
+	Plug 'hua952/vim-ripgrep'
 	Plug 'vim-scripts/a.vim'
 	"Plug 'skywind3000/vim-auto-popmenu'
 	Plug 'skywind3000/vim-dict'
+	Plug 'skywind3000/vim-terminal-help'
 	Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -195,12 +198,12 @@ if index(g:bundle_group, 'pzhSelPlug') >= 0
 	\ 'cpp': ['clangd'],
 	\ }
 	nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-	nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+	nnoremap <silent> de :call LanguageClient#textDocument_definition()<CR>
 	nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 	set completefunc=LanguageClient#complete
 
 	" enable this plugin for filetypes, '*' for all files.
-	let g:apc_enable_ft = {'d':1, 'text':1, 'xml':1, 'vim':1,'rs':1, 'pyh':1, 'lua':1, 'markdown':1, 'php':1}
+	let g:apc_enable_ft = {'text':1, 'xml':1, 'vim':1,'rs':1, 'pyh':1, 'lua':1, 'markdown':1, 'php':1}
 
 	" source for dictionary, current or other loaded buffers, see ':help cpt'
 	set cpt=.,k,w,b
@@ -210,6 +213,8 @@ if index(g:bundle_group, 'pzhSelPlug') >= 0
 
 	" suppress annoy messages.
 	set shortmess+=c
+
+	nnoremap <leader>a :w<cr> :A<cr>
 endif
 
 
@@ -348,14 +353,14 @@ if index(g:bundle_group, 'nerdtree') >= 0
 	let g:NERDTreeMinimalUI = 1
 	let g:NERDTreeDirArrows = 1
 	let g:NERDTreeHijackNetrw = 0
-	"noremap <space>nn :NERDTree<cr>
-	"noremap <space>no :NERDTreeFocus<cr>
-	"noremap <space>nm :NERDTreeMirror<cr>
-	"noremap <space>nt :NERDTreeToggle<cr>
-	noremap <leader>nn :NERDTree<cr>
-	noremap <leader>no :NERDTreeFocus<cr>
-	noremap <leader>nm :NERDTreeMirror<cr>
-	noremap <leader>nt :NERDTreeToggle<cr>
+	noremap <space>nn :NERDTree<cr>
+	noremap <space>no :NERDTreeFocus<cr>
+	noremap <space>nm :NERDTreeMirror<cr>
+	noremap <space>nt :NERDTreeToggle<cr>
+	"noremap <leader>nn :NERDTree<cr>
+	"noremap <leader>no :NERDTreeFocus<cr>
+	"noremap <leader>nm :NERDTreeMirror<cr>
+	"noremap <leader>nt :NERDTreeToggle<cr>
 endif
 
 
