@@ -184,10 +184,11 @@ endif
 if index(g:bundle_group, 'pzhSelPlug') >= 0
 	Plug 'hua952/vim-auto-popmenu'
 	Plug 'hua952/vim-ripgrep'
-	Plug 'vim-scripts/a.vim'
+	Plug 'hua952/a.vim'
 	"Plug 'skywind3000/vim-auto-popmenu'
 	Plug 'skywind3000/vim-dict'
 	Plug 'skywind3000/vim-terminal-help'
+	Plug 'skywind3000/tagbar'
 	Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -215,6 +216,7 @@ if index(g:bundle_group, 'pzhSelPlug') >= 0
 	set shortmess+=c
 
 	nnoremap <leader>a :w<cr> :A<cr>
+	nnoremap <leader>tt :TagbarToggle<CR>
 endif
 
 
@@ -233,7 +235,7 @@ if index(g:bundle_group, 'tags') >= 0
 	Plug 'skywind3000/gutentags_plus'
 
 	" 设定项目目录标志：除了 .git/.svn 外，还有 .root 文件
-	let g:gutentags_project_root = ['.root']
+	let g:gutentags_project_root = ['.root', '.git']
 	let g:gutentags_ctags_tagfile = '.tags'
 
 	" 默认生成的数据文件集中到 ~/.cache/tags 避免污染项目目录，好清理
