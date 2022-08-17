@@ -166,7 +166,7 @@ if index(g:bundle_group, 'enhanced') >= 0
 	Plug 'dyng/ctrlsf.vim'
 
 	" 配对括号和引号自动补全
-	Plug 'Raimondi/delimitMate'
+	"Plug 'Raimondi/delimitMate'
 
 	" 提供 gist 接口
 	Plug 'lambdalisue/vim-gista', { 'on': 'Gista' }
@@ -181,7 +181,7 @@ endif
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'pzhSelPlug') >= 0
 	Plug 'hua952/vim-auto-popmenu'
-	Plug 'jremmen/vim-ripgrep'
+	Plug 'hua952/vim-ripgrep'
 	"Plug 'skywind3000/vim-auto-popmenu'
 	"Plug 'skywind3000/vim-dict'
 
@@ -244,6 +244,7 @@ if index(g:bundle_group, 'tags') >= 0
 
 	" 禁止 gutentags 自动链接 gtags 数据库
 	let g:gutentags_auto_add_gtags_cscope = 0
+	let g:gutentags_define_advanced_commands = 1
 endif
 
 
