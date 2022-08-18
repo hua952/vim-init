@@ -182,8 +182,10 @@ endif
 if index(g:bundle_group, 'pzhSelPlug') >= 0
 	Plug 'hua952/vim-auto-popmenu'
 	Plug 'hua952/vim-ripgrep'
-	"Plug 'skywind3000/vim-auto-popmenu'
+	Plug 'hua952/a.vim'
+	Plug 'skywind3000/tagbar'
 	"Plug 'skywind3000/vim-dict'
+	
 
 	" enable this plugin for filetypes, '*' for all files.
 	let g:apc_enable_ft = {'d':1, 'c':1, 'cpp':1, 'h':1, 'text':1, 'xml':1, 'vim':1,'rs':1, 'pyh':1, 'lua':1, 'markdown':1, 'php':1}
@@ -196,6 +198,9 @@ if index(g:bundle_group, 'pzhSelPlug') >= 0
 
 	" suppress annoy messages.
 	set shortmess+=c
+
+	noremap <space>tt :TagbarToggle<cr>
+	noremap <space>a :up<cr> :A<cr>
 endif
 
 

@@ -331,3 +331,16 @@ else
 endif
 
 
+noremap <space>mr :echo g:MyRoot<cr>
+noremap <space>sr :let g:MyRoot=expand("%:p:h")<cr>
+
+let g:txtSeB=''
+fun! s:RgSearchTermB(txt)
+  let l:retS = a:txt
+  if empty(a:txt)
+    l:retS=expand("<cword>")
+  endif
+  g:txtSeB='\b'.l:retS.'\b'
+endfun
+
+noremap <space>mb :Mg g:txtSeB<cr>
