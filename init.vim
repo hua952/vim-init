@@ -26,7 +26,7 @@ exec 'set rtp+='.s:home
 
 " 将 ~/.vim 目录加入 runtimepath (有时候 vim 不会自动帮你加入）
 "set rtp+=$VIM/.vim
-exec 'set rtp+='.s:home.'.vim'
+exec 'set rtp+='.s:home.'vimB'
 
 "----------------------------------------------------------------------
 " 模块加载
@@ -49,6 +49,7 @@ LoadScript init/init-style.vim
 
 " 自定义按键
 LoadScript init/init-keymaps.vim
+
 
 
 

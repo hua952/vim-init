@@ -35,7 +35,7 @@ endfunc
 "----------------------------------------------------------------------
 " 在 $VIM/.vim/bundles 下安装插件
 "----------------------------------------------------------------------
-call plug#begin(get(g:, 'bundle_home', s:home.'/.vim/bundles'))
+call plug#begin(get(g:, 'bundle_home', s:home.'/vimB/bundles'))
 
 
 "----------------------------------------------------------------------
@@ -184,11 +184,12 @@ if index(g:bundle_group, 'pzhSelPlug') >= 0
 	Plug 'hua952/vim-ripgrep'
 	Plug 'hua952/a.vim'
 	Plug 'skywind3000/tagbar'
+	Plug 'ycm-core/YouCompleteMe'
 	"Plug 'skywind3000/vim-dict'
 	
 
 	" enable this plugin for filetypes, '*' for all files.
-	let g:apc_enable_ft = {'d':1, 'c':1, 'cpp':1, 'h':1, 'text':1, 'xml':1, 'vim':1,'rs':1, 'pyh':1, 'lua':1, 'markdown':1, 'php':1}
+	let g:apc_enable_ft = {'d':1, 'text':1, 'txt':1, 'xml':1, 'vim':1,'rs':1, 'pyh':1, 'lua':1, 'markdown':1, 'php':1}
 
 	" source for dictionary, current or other loaded buffers, see ':help cpt'
 	set cpt=.,k,w,b
