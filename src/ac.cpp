@@ -101,7 +101,10 @@ int main (int nArg, char* argS[])
 	}
 	std::string realVarName = "m_";
 	realVarName += strVar;
-	auto getVarName = realVarName + ".get ()";
+	auto getVarName = realVarName;
+	if (3 == nT) {
+		getVarName += ".get ()";
+	}
 	cOut<<strSpace<<strRet<<"  "<<strVar<<" ()"<<std::endl
 		<<strSpace<<"{"<<std::endl
 		<<strSpace<<"    return "<<getVarName<<";"<<std::endl
