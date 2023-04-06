@@ -39,6 +39,7 @@ int main (int nArg, char* argS[])
 		   <<"public:"<<std::endl
 		   <<"    "<<className<<" ();"<<std::endl
 		   <<"    ~"<<className<<" ();"<<std::endl
+		   <<"private:"<<std::endl
 		   <<"};"<<std::endl
 		   <<"#endif"<<std::endl;
 		ofs.close ();
