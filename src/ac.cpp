@@ -93,7 +93,8 @@ int main (int nArg, char* argS[])
 	std::string strRet = strType;
 
 	if (3 == nT) {
-		strRet = subType;
+		strRet = "const ";
+		strRet += subType;
 		strRet += "*";
 	} else if (2 == nT) {
 		strRet += "&";

@@ -349,6 +349,9 @@ noremap <space>dw <Esc>:. !dowhile<cr>
 noremap <space>wh <Esc>:. !while<cr>
 noremap <space>fo <Esc>:. !forv<cr>
 
+noremap <space>cf <Esc>:. !classFile "%:p:h" "<cword>" <cr>
+command! -nargs=* -complete=file Cf :!classFile "%:p:h" <q-args>
+
 noremap <space>cn :cn<cr>
 noremap <space>cp :cn<cr>
 noremap <space>co :cclose<cr>
