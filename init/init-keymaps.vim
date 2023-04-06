@@ -333,6 +333,25 @@ endif
 
 noremap <space>mr :echo g:MyRoot<cr>
 noremap <space>sr :let g:MyRoot=expand("%:p:h")<cr>
+"comm! -nargs=? -bang Sa call AlternateFile("n<bang>", <f-args>)
+"noremap <space>sa :Sw <cr> <Esc> :. !classH <cr> :Sa <cr> Go<Esc> :. !classCpp g:curLStr <cr>
+"noremap <space>sa <Esc>yy:. !classH <cr><Esc> :Sa <cr><Esc> G<Esc>p<Esc> :. !classCpp <cr>
+"noremap <space>sa <Esc>yy:. !classH <cr><Esc> :A <cr><Esc> Gp :. !classCpp <cr>
+noremap <space>ch <Esc>yy:. !ch <cr><Esc> :A <cr><Esc>
+noremap <space>cc <Esc>p:. !cc <cr>
+
+noremap <space>ah <Esc>yy:.-1,. !ah <cr><Esc> :A <cr><Esc>
+noremap <space>ac <Esc>p:. !ac <cr>
+noremap <space>if <Esc>:. !ifv <cr>
+noremap <space>ie <Esc>:. !ifelse <cr>
+
+noremap <space>dw <Esc>:. !dowhile<cr>
+noremap <space>wh <Esc>:. !while<cr>
+noremap <space>fo <Esc>:. !forv<cr>
+
+noremap <space>cn :cn<cr>
+noremap <space>cp :cn<cr>
+noremap <space>co :cclose<cr>
 
 let g:txtSeB=''
 fun! s:RgSearchTermB(txt)
@@ -340,7 +359,8 @@ fun! s:RgSearchTermB(txt)
   if empty(a:txt)
     l:retS=expand("<cword>")
   endif
-  g:txtSeB='\b'.l:retS.'\b'
+  g:txtSeB=\b.l:retS.\b
 endfun
 
-noremap <space>mb :Mg g:txtSeB<cr>
+noremap <space>mg :Mg <cr>
+noremap <space>mb :Mg <cr>
