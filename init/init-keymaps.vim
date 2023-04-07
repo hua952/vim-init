@@ -341,7 +341,7 @@ noremap <space>ch <Esc>yy:. !ch <cr><Esc> :A <cr><Esc>
 noremap <space>cc <Esc>p:. !cc <cr>
 
 noremap <space>ah <Esc>yy:.-1,. !ah <cr><Esc> :A <cr><Esc>
-noremap <space>ac <Esc>p:. !ac <cr>
+noremap <space>ac <Esc>p:. !ac "%:t:r" <cr>
 noremap <space>if <Esc>:. !ifv <cr>
 noremap <space>ie <Esc>:. !ifelse <cr>
 
@@ -349,6 +349,7 @@ noremap <space>dw <Esc>:. !dowhile<cr>
 noremap <space>wh <Esc>:. !while<cr>
 noremap <space>fo <Esc>:. !forv<cr>
 
+noremap <space>fu <Esc>:. !func "%:t:r" <cr>
 noremap <space>cf <Esc>:. !classFile "%:p:h" "<cword>" <cr>
 command! -nargs=* -complete=file Cf :!classFile "%:p:h" <q-args>
 
@@ -366,4 +367,4 @@ fun! s:RgSearchTermB(txt)
 endfun
 
 noremap <space>mg :Mg <cr>
-noremap <space>mb :Mg <cr>
+noremap <space>mb :Mb <cr>

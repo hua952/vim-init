@@ -29,6 +29,10 @@ int main (int nArg, char* argS[])
 	rMap ["PVoid"] = 0;
 	rMap ["loopHandleType"] = 0;
 
+	std::string className;
+	if (2 == nArg) {
+		className = argS[1];
+	}
 	int nT = 4;
 	std::string strLine;
 	getline (std::cin, strLine);
@@ -105,7 +109,7 @@ int main (int nArg, char* argS[])
 	if (3 == nT) {
 		getVarName += ".get ()";
 	}
-	cOut<<strSpace<<strRet<<"  "<<strVar<<" ()"<<std::endl
+	cOut<<strSpace<<strRet<<"  "<<className<<":: "<<strVar<<" ()"<<std::endl
 		<<strSpace<<"{"<<std::endl
 		<<strSpace<<"    return "<<getVarName<<";"<<std::endl
 		<<strSpace<<"}"<<std::endl<<std::endl;
@@ -133,7 +137,7 @@ int main (int nArg, char* argS[])
 		if ('a' <= pW[0] && pW[0] <= 'z') {
 			pW[0] -= 32;
 		}
-		cOut<<strSpace<<"void  set"<<pW<<" ("<<strArgType<<" v)"<<std::endl
+		cOut<<strSpace<<"void  "<<className<<":: set"<<pW<<" ("<<strArgType<<" v)"<<std::endl
 			<<strSpace<<"{"<<std::endl
 			<<strSpace<<"    "<<opLine.str ()<<";"<<std::endl
 			<<strSpace<<"}"<<std::endl<<std::endl;
