@@ -33,6 +33,7 @@ int main (int nArg, char* argS[])
 		std::ofstream ofs (hfile.c_str ());
 		ofs<<"#ifndef _"<<className<<"_h__"<<std::endl
 		   <<"#define _"<<className<<"_h__"<<std::endl
+		   <<"#include <memory>"<<std::endl
 		   <<std::endl
 		   <<"class "<<className<<std::endl
 		   <<"{"<<std::endl
@@ -46,6 +47,7 @@ int main (int nArg, char* argS[])
 
 		std::ofstream cfs (cfile.c_str ());
 		cfs<<"#include \""<<className<<".h\""<<std::endl
+		   <<"#include \"strFun.h\""<<std::endl
 		   <<std::endl
 		   <<className<<":: "<<className<<" ()"<<std::endl
 		   <<"{"<<std::endl
