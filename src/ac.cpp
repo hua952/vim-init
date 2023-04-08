@@ -12,6 +12,7 @@ int main (int nArg, char* argS[])
 	int nRet = 0;
 	auto& rMap = g_typeMap;
 	rMap ["int"] = 0;
+	rMap ["bool"] = 0;
 	rMap ["long"] = 0;
 	rMap ["short"] = 0;
 	rMap ["char"] = 0;
@@ -36,6 +37,10 @@ int main (int nArg, char* argS[])
 	int nT = 4;
 	std::string strLine;
 	getline (std::cin, strLine);
+	auto posT = strLine.find (";");
+	if (strLine.npos != posT) {
+		strLine = strLine.substr (0, posT);
+	}
 	std::string strType;
 	std::string strVar;
 	auto nF = strLine.find ("unique_ptr");
@@ -53,6 +58,10 @@ int main (int nArg, char* argS[])
 		std::stringstream ss (strLine);
 		ss>>firstWord;
 		while (ss>>strVar);
+		if (strVar.c_str()[0] == 'm' && strVar.c_str()[1] == '_') {
+			strVar = strVar.c_str () + 2;
+		}
+
 		auto nFF = strLine.find (">");
 		auto strT = strLine.substr (0, nFF + 1);
 		std::stringstream s2 (strT);
@@ -86,6 +95,9 @@ int main (int nArg, char* argS[])
 					nT = 0;
 				}
 			}
+		}
+		if (strVar.c_str()[0] == 'm' && strVar.c_str()[1] == '_') {
+			strVar = strVar.c_str () + 2;
 		}
 	}
 	auto pos = strLine.find (firstWord);
