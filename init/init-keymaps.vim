@@ -348,6 +348,7 @@ noremap <space>ie <Esc>:. !ifelse <cr>
 noremap <space>dw <Esc>:. !dowhile<cr>
 noremap <space>wh <Esc>:. !while<cr>
 noremap <space>fo <Esc>:. !forv<cr>
+noremap <space>in <Esc>:. !include<cr>
 
 noremap <space>fu <Esc>:. !func "%:t:r" <cr>
 noremap <space>cf <Esc>:. !classFile "%:p:h" "<cword>" <cr>
