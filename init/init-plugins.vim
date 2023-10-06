@@ -184,7 +184,7 @@ if index(g:bundle_group, 'pzhSelPlug') >= 0
 	Plug 'hua952/vim-ripgrep'
 	Plug 'hua952/a.vim'
 	Plug 'skywind3000/tagbar'
-	Plug 'ycm-core/YouCompleteMe'
+	"Plug 'ycm-core/YouCompleteMe'
 	"Plug 'skywind3000/vim-dict'
 	
 

@@ -331,8 +331,8 @@ else
 endif
 
 
-noremap <space>mr :echo g:MyRoot<cr>
-noremap <space>sr :let g:MyRoot=expand("%:p:h")<cr>
+noremap <space>mr :echo t:MyRoot<cr>
+noremap <space>sr :let t:MyRoot=expand("%:p:h")<cr>
 "comm! -nargs=? -bang Sa call AlternateFile("n<bang>", <f-args>)
 "noremap <space>sa :Sw <cr> <Esc> :. !classH <cr> :Sa <cr> Go<Esc> :. !classCpp g:curLStr <cr>
 "noremap <space>sa <Esc>yy:. !classH <cr><Esc> :Sa <cr><Esc> G<Esc>p<Esc> :. !classCpp <cr>
@@ -348,6 +348,7 @@ noremap <space>ie <Esc>:. !ifelse <cr>
 noremap <space>dw <Esc>:. !dowhile<cr>
 noremap <space>wh <Esc>:. !while<cr>
 noremap <space>fo <Esc>:. !forv<cr>
+noremap <space>fi <Esc>:. !forI<cr>
 noremap <space>in <Esc>:. !include<cr>
 noremap <space>st <Esc>:. !struct<cr>
 
