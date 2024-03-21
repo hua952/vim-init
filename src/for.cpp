@@ -16,7 +16,7 @@ int main (int nArg, char* argS[])
 	}
 
 	auto& cOut = std::cout;
-	cOut<<strSpace<<"for (decltype ("<<n<<") "<<i<<" = 0; "<<i<<" < "<<n<<"; i++) {"<<std::endl
+	cOut<<strSpace<<"for (decltype ("<<n<<") "<<i<<" = 0; "<<i<<" < "<<n<<"; "<<i<<"++) {"<<std::endl
 		<<strSpace<<"}"<<std::endl;
 	return nRet;
 }
