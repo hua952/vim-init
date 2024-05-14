@@ -14,4 +14,8 @@ clang++ include.cpp -o include.exe -O2
 clang++ myAssert.cpp -o myAssert.exe -O2
 clang++ func.cpp -o func.exe -O2
 clang++ classFile.cpp -o classFile.exe -O2
+clang++ convertType.cpp -o convertType.exe -O2
+clang++ decltype.cpp -o decltype.exe -O2
+clang++ makeUnique.cpp -o makeUnique.exe -O2
+clang++ unique_ptr.cpp -o unique_ptr.exe -O2
 

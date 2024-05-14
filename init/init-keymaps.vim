@@ -351,6 +351,11 @@ noremap <space>fo <Esc>:. !forv<cr>
 noremap <space>fi <Esc>:. !forI<cr>
 noremap <space>in <Esc>:. !include<cr>
 noremap <space>st <Esc>:. !struct<cr>
+noremap <space>as <Esc>:. !myAssert<cr>
+noremap <space>cv <Esc>:. !convertType<cr>
+noremap <space>dc <Esc>:. !decltype<cr>
+noremap <space>mu <Esc>:. !makeUnique<cr>
+noremap <space>up <Esc>:. !unique_ptr<cr>
 
 noremap <space>fu <Esc>:. !func "%:t:r" <cr>
 noremap <space>cf <Esc>:. !classFile "%:p:h" "<cword>" <cr>
