@@ -2,6 +2,7 @@
 #include <sstream>
 #include <map>
 #include <memory>
+#include <cstring>
 
 using typeMap = std::map <std::string, int>;
 

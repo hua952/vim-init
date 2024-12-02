@@ -376,3 +376,4 @@ endfun
 
 noremap <space>mg :Mg <cr>
 noremap <space>mb :Mb <cr>
+let mapleader=","
