@@ -16,7 +16,7 @@ int main (int nArg, char* argS[])
 	}
 
 	auto& cOut = std::cout;
-	cOut<<strSpace<<"for (auto "<<i<<" = "<<n<<".begin (); "<<i<<" != "<<n<<".end (); i++) {"<<std::endl
+	cOut<<strSpace<<"for (auto "<<i<<" = "<<n<<".begin (); "<<i<<" != "<<n<<".end (); "<<i<<"++) {"<<std::endl
 		<<strSpace<<"}"<<std::endl;
 	return nRet;
 }

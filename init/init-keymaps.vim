@@ -352,6 +352,12 @@ noremap <space>fi <Esc>:. !forI<cr>
 noremap <space>in <Esc>:. !include<cr>
 noremap <space>st <Esc>:. !struct<cr>
 
+noremap <space>up <Esc>:. !unique_ptr<cr>
+noremap <space>sp <Esc>:. !shared_ptr<cr>
+noremap <space>mu <Esc>:. !make_unique<cr>
+noremap <space>ms <Esc>:. !make_shared<cr>
+noremap <space>cv <Esc>:. !convert<cr>
+
 noremap <space>fu <Esc>:. !func "%:t:r" <cr>
 noremap <space>cf <Esc>:. !classFile "%:p:h" "<cword>" <cr>
 command! -nargs=* -complete=file Cf :!classFile "%:p:h" <q-args>
