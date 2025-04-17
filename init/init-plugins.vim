@@ -19,6 +19,7 @@ if !exists('g:bundle_group')
 	let g:bundle_group += ['leaderf']
 endif
 
+let g:bundle_group += ['pzhSelPlug']
 
 "----------------------------------------------------------------------
 " 计算当前 vim-init 的子路径
@@ -32,9 +33,9 @@ endfunc
 
 
 "----------------------------------------------------------------------
-" 在 ~/.vim/bundles 下安装插件
+" 在 $VIM/.vim/bundles 下安装插件
 "----------------------------------------------------------------------
-call plug#begin(get(g:, 'bundle_home', '~/.vim/bundles'))
+call plug#begin(get(g:, 'bundle_home', s:home.'/vimB/bundles'))
 
 
 "----------------------------------------------------------------------
@@ -165,7 +166,7 @@ if index(g:bundle_group, 'enhanced') >= 0
 	Plug 'dyng/ctrlsf.vim'
 
 	" 配对括号和引号自动补全
-	Plug 'Raimondi/delimitMate'
+	"Plug 'Raimondi/delimitMate'
 
 	" 提供 gist 接口
 	Plug 'lambdalisue/vim-gista', { 'on': 'Gista' }
@@ -173,6 +174,34 @@ if index(g:bundle_group, 'enhanced') >= 0
 	" ALT_+/- 用于按分隔符扩大缩小 v 选区
 	map <m-=> <Plug>(expand_region_expand)
 	map <m--> <Plug>(expand_region_shrink)
+endif
+
+"----------------------------------------------------------------------
+"PZH选择的插件mySelPlug 
+"----------------------------------------------------------------------
+if index(g:bundle_group, 'pzhSelPlug') >= 0
+	Plug 'hua952/vim-auto-popmenu'
+	Plug 'hua952/vim-ripgrep'
+	Plug 'hua952/a.vim'
+	Plug 'skywind3000/tagbar'
+	"Plug 'ycm-core/YouCompleteMe'
+	"Plug 'skywind3000/vim-dict'
+	
+
+	" enable this plugin for filetypes, '*' for all files.
+	let g:apc_enable_ft = {'d':1, 'text':1, 'txt':1, 'xml':1, 'vim':1,'rs':1, 'pyh':1, 'lua':1, 'markdown':1, 'php':1}
+
+	" source for dictionary, current or other loaded buffers, see ':help cpt'
+	set cpt=.,k,w,b
+
+	" don't select the first item.
+	set completeopt=menu,menuone,noselect
+
+	" suppress annoy messages.
+	set shortmess+=c
+
+	noremap <space>tt :TagbarToggle<cr>
+	noremap <space>a :up<cr> :A<cr>
 endif
 
 
@@ -221,6 +250,7 @@ if index(g:bundle_group, 'tags') >= 0
 
 	" 禁止 gutentags 自动链接 gtags 数据库
 	let g:gutentags_auto_add_gtags_cscope = 0
+	let g:gutentags_define_advanced_commands = 1
 endif
 
 

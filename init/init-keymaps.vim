@@ -316,7 +316,7 @@ endfunc
 "----------------------------------------------------------------------
 if executable('rg')
 	noremap <silent><F2> :AsyncRun! -cwd=<root> rg -n --no-heading 
-				\ --color never -g *.h -g *.c* -g *.py -g *.js -g *.vim 
+				\ --color never -g *.h -g *.c* -g *.d -g *.py -g *.js -g *.vim 
 				\ <C-R><C-W> "<root>" <cr>
 elseif has('win32') || has('win64')
 	noremap <silent><F2> :AsyncRun! -cwd=<root> findstr /n /s /C:"<C-R><C-W>" 
@@ -325,9 +325,55 @@ elseif has('win32') || has('win64')
 				\ <cr>
 else
 	noremap <silent><F2> :AsyncRun! -cwd=<root> grep -n -s -R <C-R><C-W> 
-				\ --include='*.h' --include='*.c*' --include='*.py' 
+				\ --include='*.h' --include='*.c*' --include='*.d' --include='*.py' 
 				\ --include='*.js' --include='*.vim'
 				\ '<root>' <cr>
 endif
 
 
+noremap <space>mr :echo t:MyRoot<cr>
+noremap <space>sr :let t:MyRoot=expand("%:p:h")<cr>
+"comm! -nargs=? -bang Sa call AlternateFile("n<bang>", <f-args>)
+"noremap <space>sa :Sw <cr> <Esc> :. !classH <cr> :Sa <cr> Go<Esc> :. !classCpp g:curLStr <cr>
+"noremap <space>sa <Esc>yy:. !classH <cr><Esc> :Sa <cr><Esc> G<Esc>p<Esc> :. !classCpp <cr>
+"noremap <space>sa <Esc>yy:. !classH <cr><Esc> :A <cr><Esc> Gp :. !classCpp <cr>
+noremap <space>ch <Esc>yy:. !ch <cr><Esc> :A <cr><Esc>
+noremap <space>cc <Esc>p:. !cc <cr>
+
+noremap <space>ah <Esc>yy:.-1,. !ah <cr><Esc> :A <cr><Esc>
+noremap <space>ac <Esc>p:. !ac "%:t:r" <cr>
+noremap <space>if <Esc>:. !ifv <cr>
+noremap <space>ie <Esc>:. !ifelse <cr>
+
+noremap <space>dw <Esc>:. !dowhile<cr>
+noremap <space>wh <Esc>:. !while<cr>
+noremap <space>fo <Esc>:. !forv<cr>
+noremap <space>fi <Esc>:. !forI<cr>
+noremap <space>in <Esc>:. !include<cr>
+noremap <space>st <Esc>:. !struct<cr>
+
+noremap <space>up <Esc>:. !unique_ptr<cr>
+noremap <space>sp <Esc>:. !shared_ptr<cr>
+noremap <space>mu <Esc>:. !make_unique<cr>
+noremap <space>ms <Esc>:. !make_shared<cr>
+noremap <space>cv <Esc>:. !convert<cr>
+
+noremap <space>fu <Esc>:. !func "%:t:r" <cr>
+noremap <space>cf <Esc>:. !classFile "%:p:h" "<cword>" <cr>
+command! -nargs=* -complete=file Cf :!classFile "%:p:h" <q-args>
+
+noremap <space>cn :cn<cr>
+noremap <space>cp :cn<cr>
+noremap <space>co :cclose<cr>
+
+let g:txtSeB=''
+fun! s:RgSearchTermB(txt)
+  let l:retS = a:txt
+  if empty(a:txt)
+    l:retS=expand("<cword>")
+  endif
+  g:txtSeB=\b.l:retS.\b
+endfun
+
+noremap <space>mg :Mg <cr>
+noremap <space>mb :Mb <cr>

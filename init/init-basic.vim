@@ -149,7 +149,7 @@ endif
 "----------------------------------------------------------------------
 " 文件搜索和补全时忽略下面扩展名
 "----------------------------------------------------------------------
-set suffixes=.bak,~,.o,.h,.info,.swp,.obj,.pyc,.pyo,.egg-info,.class
+set suffixes=.bak,~,.o,.info,.swp,.obj,.pyc,.pyo,.egg-info,.class
 
 set wildignore=*.o,*.obj,*~,*.exe,*.a,*.pdb,*.lib "stuff to ignore when tab completing
 set wildignore+=*.so,*.dll,*.swp,*.egg,*.jar,*.class,*.pyc,*.pyo,*.bin,*.dex
@@ -168,5 +168,4 @@ set wildignore+=*.msi,*.crx,*.deb,*.vfd,*.apk,*.ipa,*.bin,*.msu
 set wildignore+=*.gba,*.sfc,*.078,*.nds,*.smd,*.smc
 set wildignore+=*.linux2,*.win32,*.darwin,*.freebsd,*.linux,*.android
 
-
-
+autocmd TabNew * let t:MyRoot = getcwd()
