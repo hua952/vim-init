@@ -3,6 +3,9 @@
 #include <map>
 #include <memory>
 
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
 using typeMap = std::map <std::string, int>;
 
 typeMap g_typeMap;

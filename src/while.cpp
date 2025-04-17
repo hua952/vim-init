@@ -1,6 +1,9 @@
 #include <iostream>
 #include <sstream>
 
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
 int main (int nArg, char* argS[])
 {
 	int nRet = 0;

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16) 
+cmake_minimum_required(VERSION 3.10) 
 SET(prjName numGame)
 project(${prjName})
 set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_HOME}/scripts/buildsystems/vcpkg.cmake")
