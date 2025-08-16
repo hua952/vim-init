@@ -25,6 +25,10 @@ set noet
 " 如果后面设置了 expandtab 那么展开 tab 为多少字符
 set softtabstop=4
 
+set expandtab       " 将Tab自动转换为空格
+set tabstop=4       " 一个Tab显示为4个空格宽度
+set shiftwidth=4    " 自动缩进时使用4个空格
+set softtabstop=4   " 按Tab键时实际插入的空格数
 
 augroup PythonTab
 	au!

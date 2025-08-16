@@ -1,3 +1,4 @@
+let mapleader = ","
 "======================================================================
 "
 " init-keymaps.vim - 按键设置，按你喜欢更改
@@ -377,3 +378,8 @@ endfun
 
 noremap <space>mg :Mg <cr>
 noremap <space>mb :Mb <cr>
+
+nnoremap <space>u viwUwa
+
+" 按 F2 键将全文 Tab 转换为 4 个空格
+nnoremap <space>ts :%s/\t/    /g<CR>:echo "Tab 已替换为 4 个空格"<CR>

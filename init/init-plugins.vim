@@ -345,6 +345,7 @@ if index(g:bundle_group, 'nerdtree') >= 0
 	noremap <space>no :NERDTreeFocus<cr>
 	noremap <space>nm :NERDTreeMirror<cr>
 	noremap <space>nt :NERDTreeToggle<cr>
+	noremap <space>ne :NERDTreeFind<cr>
 endif
 
 
@@ -512,6 +513,19 @@ if index(g:bundle_group, 'leaderf') >= 0
 				\ "Function": [["<ESC>", ':exec g:Lf_py "functionExplManager.quit()"<cr>']],
 				\ }
 
+		let g:Lf_UseCache = 1              " 启用缓存
+		let g:Lf_UseMemoryCache = 1        " 使用内存缓存
+		let g:Lf_UseVersionControlTool = 0
+
+		let g:Lf_RgConfig = [
+					\ "--max-columns=150",
+					\ "--type-add web:*.{html,js,ts,css,scss,vue}",
+					\ "--glob=!git/*",
+					\ "--hidden"
+					\ ]
+
+		noremap <space>l :LeaderfLine<cr>
+		noremap <space>C :LeaderfColorscheme<cr>
 	else
 		" 不支持 python ，使用 CtrlP 代替
 		Plug 'ctrlpvim/ctrlp.vim'
