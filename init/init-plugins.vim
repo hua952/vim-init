@@ -342,25 +342,7 @@ if index(g:bundle_group, 'nerdtree') >= 0
 	let g:NERDTreeDirArrows = 1
 	let g:NERDTreeHijackNetrw = 0
     " 设置 NerdTree 忽略的文件类型
-    let g:NERDTreeIgnore = [
-    '\.pyc$',          " 忽略 Python 编译文件
-    '\.o$',            " 忽略编译生成的目标文件
-    '\.mod$',          " 忽略编译生成的目标文件
-    '\.mod.o$',        " 忽略编译生成的目标文件
-    '\.mod.c$',        " 忽略编译生成的目标文件
-    '\.ko$',           " 忽略编译生成的目标文件
-    '\.obj$',          " 忽略 Windows 目标文件
-    '\.so$',           " 忽略共享库文件
-    '\.dll$',          " 忽略 Windows 动态链接库
-    '\.swp$',          " 忽略 Vim 交换文件
-    '\.swo$',          " 忽略 Vim 交换文件
-    '\.git$',          " 忽略 .git 目录
-    '\.svn$',          " 忽略 .svn 目录
-    '\.DS_Store$',     " 忽略 macOS 系统文件
-    'node_modules$',   " 忽略 node_modules 目录
-    'dist$',           " 忽略 dist 目录
-    'build$'           " 忽略 build 目录
-]
+    let g:NERDTreeIgnore = ['\.pyc$','\.o$','\.dtb$','\.mod$','\.mod\.o$','\.mod\.c$','\.ko$','\.obj$','\.so$','\.dll$','\.swp$','\.swo$','\.git$','\.svn$','\.DS_Store$','node_modules$','dist$']
 	noremap <space>nn :NERDTree<cr>
 	noremap <space>no :NERDTreeFocus<cr>
 	noremap <space>nm :NERDTreeMirror<cr>
