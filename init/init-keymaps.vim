@@ -359,6 +359,7 @@ noremap <space>mu <Esc>:. !make_unique<cr>
 noremap <space>ms <Esc>:. !make_shared<cr>
 noremap <space>cv <Esc>:. !convert<cr>
 
+noremap <space>df <Esc>:. !ifndef "%:t" <cr>
 noremap <space>fu <Esc>:. !func "%:t:r" <cr>
 noremap <space>cf <Esc>:. !classFile "%:p:h" "<cword>" <cr>
 command! -nargs=* -complete=file Cf :!classFile "%:p:h" <q-args>
