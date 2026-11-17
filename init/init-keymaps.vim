@@ -384,3 +384,7 @@ nnoremap <space>u viwUwa
 
 " 按 F2 键将全文 Tab 转换为 4 个空格
 nnoremap <space>ts :%s/\t/    /g<CR>:echo "Tab 已替换为 4 个空格"<CR>
+
+noremap <space>tf :Telescope find_files<cr>
+noremap <space>tl :Telescope live_grep<cr>
+noremap <space>tb :Telescope buffers<cr>

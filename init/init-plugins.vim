@@ -181,15 +181,20 @@ endif
 "PZH选择的插件mySelPlug 
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'pzhSelPlug') >= 0
+    " 终端浮动窗口
+    Plug 'voldikss/vim-floaterm'
+    " 代码注释工具
+    Plug 'preservim/nerdcommenter'
+	"Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 	Plug 'hua952/vim-auto-popmenu'
 	Plug 'hua952/vim-ripgrep'
 	Plug 'hua952/a.vim'
 	Plug 'skywind3000/tagbar'
 	"Plug 'ycm-core/YouCompleteMe'
 	"Plug 'skywind3000/vim-dict'
-	
 
 	" enable this plugin for filetypes, '*' for all files.
+
 	let g:apc_enable_ft = {'d':1, 'text':1, 'txt':1, 'xml':1, 'vim':1,'rs':1, 'pyh':1, 'lua':1, 'markdown':1, 'php':1}
 
 	" source for dictionary, current or other loaded buffers, see ':help cpt'

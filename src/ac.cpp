@@ -17,6 +17,8 @@ int main (int nArg, char* argS[])
 	rMap ["int"] = 0;
 	rMap ["bool"] = 0;
 	rMap ["long"] = 0;
+	rMap ["float"] = 0;
+	rMap ["double"] = 0;
 	rMap ["short"] = 0;
 	rMap ["char"] = 0;
 	rMap ["sbyte"] = 0;
